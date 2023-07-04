@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/manhhung2000/mfe",
+  "homepage": "./public/index.html",
   "name": "mfe",
   "version": "1.0.0",
   "description": "",
