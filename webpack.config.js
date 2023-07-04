@@ -9,6 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), "dist"),
     filename: "index_bundle.js",
+    publicPath: "http://localhost:3000/",
   },
   target: "web",
   devServer: {
