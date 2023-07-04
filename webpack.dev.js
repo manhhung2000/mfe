@@ -20,12 +20,10 @@ const devConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "detail",
+      name: "map",
       filename: "remoteEntry.js",
       exposes: {
         "./App": "./src/bootstrap",
-        "./ProductDetail": "./src/components/ProductDetail",
-        "./Cart": "./src/components/Cart",
       },
       shared: packageJson.dependencies,
     }),
