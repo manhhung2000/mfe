@@ -11,7 +11,7 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "map",
+      name: "product-detail",
       filename: "remoteEntry.js",
       exposes: {
         "./App": "./src/bootstrap",
