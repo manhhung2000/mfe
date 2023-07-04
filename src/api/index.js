@@ -1,8 +1,10 @@
 import axios from "axios";
 import queryString from "query-string";
 
+const BASE_URL_API = "https://dummyjson.com";
+
 const requestAPI = axios.create({
-  baseURL: process.env.BASE_URL_API,
+  baseURL: BASE_URL_API,
   paramsSerializer: {
     encode: (params) => queryString.stringify(params),
   },
