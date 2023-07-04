@@ -1,11 +1,13 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
+const packageJson = require("./package.json");
 
 module.exports = {
-  entry: "./index.js",
+  entry: "./src/index.js",
   mode: "development",
   output: {
-    path: path.resolve(__dirname, "./dist"),
+    path: path.resolve(process.cwd(), "dist"),
     filename: "index_bundle.js",
   },
   target: "web",
@@ -31,6 +33,14 @@ module.exports = {
     ],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: "map",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./ProductDetail": "./src/bootstrap",
+      },
+      shared: packageJson.dependencies,
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
     }),
