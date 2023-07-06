@@ -1,10 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import serviceApi from "../api//service";
-import Loader from "./Loader";
+import serviceApi from "../api/service";
+import Loader from "../components/Loader";
 
-const ProductDetail = () => {
-  const { id } = useParams();
+export const App = () => {
   const [product, setProduct] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [quantity, setQuantity] = React.useState(1);
@@ -19,12 +17,8 @@ const ProductDetail = () => {
 
   React.useEffect(() => {
     setLoading(true);
-    if (id) {
-      getProductDetail(id);
-    } else {
-      setLoading(false);
-    }
-  }, [id]);
+    getProductDetail(1);
+  }, []);
 
   const addToCart = async () => {};
 
@@ -130,4 +124,4 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+// export default App;

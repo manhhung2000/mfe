@@ -1,10 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import CartHeader from "./CartHeader";
 
 const Header = () => {
-  const [open, setOpen] = React.useState(false);
-
   return (
     <div>
       <div className="bg-white rounded shadow-lg py-5 px-7">
@@ -29,10 +25,7 @@ const Header = () => {
           </div>
 
           <div className=" flex space-x-5 justify-center items-center pl-2">
-            <div
-              onClick={() => setOpen(true)}
-              className="relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 "
-            >
+            <div className="relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -46,23 +39,9 @@ const Header = () => {
               <div className="animate-ping w-1.5 h-1.5 bg-indigo-700 rounded-full absolute -top-1 -right-1 m-auto duration-200" />
               <div className=" w-1.5 h-1.5 bg-indigo-700 rounded-full absolute -top-1 -right-1 m-auto shadow-lg" />
             </div>
-            <Link to="/cart">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 32 32"
-                width="20"
-                height="20"
-              >
-                <path
-                  d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z"
-                  data-name="3-Arrow Right"
-                />
-              </svg>
-            </Link>
           </div>
         </nav>
       </div>
-      <CartHeader open={open} setOpen={setOpen} />
     </div>
   );
 };
